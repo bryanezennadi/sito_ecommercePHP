@@ -98,4 +98,18 @@ img.parametriLibro{
     color: #fff;
     border-radius: 5px;
 }
+.nav-linkAttivo{
+    color: black;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+}
+.nav-linkAttivo:hover{
+    color: #00ff40;
+}
+.nav-linkAttivo {
+    color: #00ff40;
+    font-weight: 600;
+}
 

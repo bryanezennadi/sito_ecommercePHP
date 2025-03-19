@@ -1,19 +1,7 @@
 <?php
-require '../componenti/navbar.php';
+require '../componenti/header.php';
 require '../componenti/footer.php';
 ?>
-<!doctype html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
-    <link rel="stylesheet" href="../altri_file/home.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-
-</head>
 <body>
 <h1 id="titolohome" class="titolo">LibriVivi</h1>
 <div class="container">
