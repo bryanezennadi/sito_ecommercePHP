@@ -19,7 +19,7 @@ if ($conn->connect_error) {
 function estraiLibriSportivi($conn)
 {
     // Query SQL per estrarre i libri fantasy
-    $sql = "SELECT categoria, titolo, autore, immagine, descrizione, prezzo FROM libreria.libri WHERE categoria = 'SPORT'";
+    $sql = "SELECT categoria, titolo, autore, immagine, descrizione, prezzo,id FROM libreria.libri WHERE categoria = 'SPORT'";
     $result = $conn->query($sql);
 
     // Verifica se la query ha restituito dei risultati
@@ -33,7 +33,8 @@ function estraiLibriSportivi($conn)
                 'autore' => $row['autore'],
                 'immagine' => $row['immagine'],
                 'descrizione' => $row['descrizione'],
-                'prezzo' => $row['prezzo']
+                'prezzo' => $row['prezzo'],
+                'id' => $row['id']
             ];
         }
         return $libri;

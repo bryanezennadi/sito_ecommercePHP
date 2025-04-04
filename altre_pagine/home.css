@@ -38,11 +38,11 @@
     text-align: center;
 
 }
-/*footer {
+footer {
   position: fixed;
   bottom:0;
   width: 100%;
-}*/
+}
 .logo{
     width: 70%;
     min-width: 50px; /* Impone una larghezza minima di 5px */

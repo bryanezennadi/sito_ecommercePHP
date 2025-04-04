@@ -20,19 +20,19 @@ $headers = ['Home', 'Libri fantasy', 'Libri sportivi', 'Libri d\'avventura', 'ca
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto" id="navbar">
                 <li class="nav-item">
-                    <a class=<?= isActive('index.php')?> href = 'index.php'><?= $headers[0] ?></a>
+                    <a class="<?= isActive('index.php') ?>" href="index.php"><?= $headers[0] ?></a>
                 </li>
                 <li class="nav-item">
-                    <a class=<?= isActive('Fantasy.php')?> href = 'Fantasy.php'><?= $headers[1] ?></a>
+                    <a class="<?= isActive('Fantasy.php') ?>" href="Fantasy.php"><?= $headers[1] ?></a>
                 </li>
                 <li class="nav-item">
-                    <a class=<?= isActive('Sportivi.php')?> href = 'Sportivi.php'><?= $headers[2] ?></a>
+                    <a class="<?= isActive('Sportivi.php') ?>" href="Sportivi.php"><?= $headers[2] ?></a>
                 </li>
                 <li class="nav-item">
-                    <a class=<?= isActive('Avventura.php')?> href = 'Avventura.php'><?= $headers[3] ?></a>
+                    <a class="<?= isActive('Avventura.php') ?>" href="Avventura.php"><?= $headers[3] ?></a>
                 </li>
                 <li class="nav-item">
-                    <a class= <?= isActive('Carrello.php')?> href = 'Carrello.php'><?= $headers[4] ?></a>
+                    <a class="<?= isActive('Carrello.php') ?>" href="Carrello.php"><?= $headers[4] ?></a>
                 </li>
             </ul>
         </div>

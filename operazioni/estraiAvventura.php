@@ -15,9 +15,9 @@ if ($conn->connect_error) {
 }
 
 // Funzione per estrarre i libri fantasy
-function estraiLibriFantasy($conn) {
+function estraiLibriAvventura($conn) {
     // Query SQL per estrarre i libri fantasy
-    $sql = "SELECT categoria, titolo, autore, immagine, descrizione, prezzo, id FROM libreria.libri WHERE categoria = 'FANTASY'";
+    $sql = "SELECT categoria, titolo, autore, immagine, descrizione, prezzo,id FROM libreria.libri WHERE categoria = 'AVVENTURA'";
     $result = $conn->query($sql);
 
     // Verifica se la query ha restituito dei risultati
@@ -31,9 +31,8 @@ function estraiLibriFantasy($conn) {
                 'autore' => $row['autore'],
                 'immagine' => $row['immagine'],
                 'descrizione' => $row['descrizione'],
-                'id' => $row['id'],
-                'prezzo' => $row['prezzo']
-
+                'prezzo' => $row['prezzo'],
+                'id'=> $row['id']
             ];
         }
         return $libri;
@@ -44,13 +43,13 @@ function estraiLibriFantasy($conn) {
 }
 
 // Estrai i libri fantasy
-$libriFantasy = estraiLibriFantasy($conn);
+$libriAvventura = estraiLibriAvventura($conn);
 
 // Salva i dati nella sessione solo se ci sono libri estratti
-if (!empty($libriFantasy)) {
-    $_SESSION['libriFantasy'] = $libriFantasy;
+if (!empty($libriAvventura)) {
+    $_SESSION['libriAvventura'] = $libriAvventura;
 } else {
-    $_SESSION['libriFantasy'] = [];  // Salva un array vuoto se non ci sono libri
+    $_SESSION['libriAvventura'] = [];  // Salva un array vuoto se non ci sono libri
 }
 
 // Chiudi la connessione

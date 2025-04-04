@@ -1,0 +1,247 @@
+/* cart.css - Stili per il carrello */
+/* Personalizzazione della navbar */
+.custom-navbar {
+    background-color: #fc766d;
+    /* Colore di sfondo più scuro */
+}
+
+.custom-navbar .navbar-brand {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #ecf0f1;
+}
+
+.custom-navbar .navbar-nav .nav-link {
+    color: black;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.custom-navbar .navbar-nav .nav-link:hover {
+    color: #00ff40;
+    /* Colore arancio per hover */
+}
+
+.custom-navbar .navbar-toggler {
+    border-color: #ecf0f1;
+}
+
+.custom-navbar .navbar-toggler-icon {
+    background-color: #ecf0f1;
+}
+
+/* Personalizzazione dello stato attivo */
+.custom-navbar .navbar-nav .nav-link.active {
+    color: #00ff40;
+    font-weight: 600;
+}
+#testo_footer {
+    text-align: center;
+
+}
+.cart-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.cart-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.cart-items {
+    margin-bottom: 30px;
+}
+
+.cart-item {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.cart-item-image {
+    width: 16%;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.item-name {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0 0 5px 0;
+    color: #333;
+}
+
+.item-detail {
+    margin: 5px 0;
+    color: #555;
+}
+
+.item-subtotal {
+    font-weight: bold;
+    color: #e63946;
+    margin-top: 10px;
+}
+
+.cart-buttons {
+    display: flex;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.btn {
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-remove {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-remove:hover {
+    background-color: #d32f2f;
+}
+
+.btn-decrease {
+    background-color: #FF9800;
+    color: white;
+}
+
+.btn-decrease:hover {
+    background-color: #F57C00;
+}
+
+.btn-increase {
+    background-color: #2196F3;
+    color: white;
+}
+
+.btn-increase:hover {
+    background-color: #1976D2;
+}
+
+.cart-total {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 30px 0;
+    text-align: right;
+    color: #333;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    gap: 15px;
+    padding-bottom: 15%;
+}
+
+.btn-checkout {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+}
+
+.btn-checkout:hover {
+    background-color: #388E3C;
+}
+
+.btn-empty {
+    background-color: #607D8B;
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+}
+
+.btn-empty:hover {
+    background-color: #455A64;
+}
+
+.cart-message {
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.message-success {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+}
+
+.message-error {
+    background-color: #f2dede;
+    color: #a94442;
+    border: 1px solid #ebccd1;
+}
+
+.message-warning {
+    background-color: #fcf8e3;
+    color: #8a6d3b;
+    border: 1px solid #faebcc;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 50px 0;
+    color: #777;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .cart-item {
+        flex-direction: column;
+    }
+
+    .cart-item-image {
+        margin-bottom: 15px;
+    }
+
+    .cart-actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    background-color: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+}

@@ -8,7 +8,10 @@ $stylePath= function () {
     // Verifica se la pagina è index.php
     if ($currentPage === "index.php") {
         return '../altre_pagine/home.css'; // Percorso CSS per la home
-    } else{
+    } else if($currentPage==="Carrello.php"){
+        return '../altre_pagine/styleCarrello.css';
+    }
+    else{
         return "../altre_pagine/styleBase.css"; // Percorso CSS per altre pagine
     }
 };
