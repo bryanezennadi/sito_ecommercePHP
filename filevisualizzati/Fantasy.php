@@ -71,43 +71,64 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
 <?php endif; ?>
 
 <div class="container">
-    <div class="row">
-        <?php if (!empty($libriFantasy)) : ?>
-            <?php foreach ($libriFantasy as $index => $libro) : ?>
-                <div class="col-12 col-md-4">
-                    <div class="book">
-                        <img src="<?= htmlspecialchars($libro['immagine']) ?>"
-                             alt="<?= htmlspecialchars($libro['titolo']) ?>"
-                             class="<?= in_array($index, [0, 2, 3]) ? $classeSpeciale : $classeNormale ?>" />
-                        <br>
-                        <h3 class="parametriLibro"> <?= htmlspecialchars($libro['titolo']) ?> </h3>
-                        <br>
-                        <p class="parametriLibro"><strong>Autore:</strong> <?= htmlspecialchars($libro['autore']) ?></p>
-                        <br>
-                        <p class="parametriLibro"><strong>Prezzo:</strong> <?= htmlspecialchars($libro['prezzo']) ?>€</p>
-                        <br>
-                        <?php if (!empty($libro['id']) && !empty($libro['titolo']) && !empty($libro['prezzo']) && !empty($libro['immagine'])) : ?>
-                            <!-- Form per aggiungere al carrello -->
-                            <form method="POST">
-                                <input type="hidden" name="id" value="<?= htmlspecialchars($libro['id']) ?>">
-                                <input type="hidden" name="name" value="<?= htmlspecialchars($libro['titolo']) ?>">
-                                <input type="hidden" name="price" value="<?= htmlspecialchars($libro['prezzo']) ?>">
-                                <input type="hidden" name="image" value="<?= htmlspecialchars($libro['immagine']) ?>">
-                                <button type="submit" name="add_to_cart" class="add-to-cart parametriLibro">
-                                    Aggiungi al carrello
-                                </button>
-                            </form>
-                        <?php else : ?>
-                            <p class='error'>Errore nel caricamento del libro</p>
-                        <?php endif; ?>
-                    </div>
+<div class="row">
+    <?php
+    $i = 0;  // Contatore per determinare quando applicare una classe speciale
+    if (isset($libriFantasy) && is_array($libriFantasy)) {
+        foreach ($libriFantasy as $libro) {
+            $i++; // Incrementa il contatore
+            ?>
+            <div class="col-12 col-md-4">
+                <div class="book">
+                    <?php
+                    // Verifica se è uno dei libri speciali per applicare la classe rimpicciolita
+                    if ($i == 1 || $i == 3 || $i == 4) {
+                        ?>
+                        <a href="dettagli.php?id=<?= urlencode($libro['id']) ?>">
+                            <img src="<?= htmlspecialchars($libro['immagine']) ?>" alt="<?= htmlspecialchars($libro['titolo']) ?>" class="<?= $classeSpeciale ?>"/>
+                        </a>
+                        <?php
+                    } else {
+                        ?>
+                        <a href="dettagli.php?id=<?= urlencode($libro['id']) ?>">
+                            <img src="<?= htmlspecialchars($libro['immagine']) ?>" alt="<?= htmlspecialchars($libro['titolo']) ?>" class="<?= $classeNormale ?>"/>
+                        </a>
+                        <?php
+                    }
+                    ?>
+                    <br>
+                    <h3 class="parametriLibro"><?= htmlspecialchars($libro['titolo']) ?></h3>
+                    <br>
+                    <p class="parametriLibro"><strong>Autore:</strong> <?= htmlspecialchars($libro['autore']) ?></p>
+                    <br>
+                    <p class="parametriLibro"><strong>Prezzo:</strong> <?= htmlspecialchars($libro['prezzo']) ?>€</p>
+                    <br>
+                    <!-- Form per aggiungere al carrello -->
+                    <?php if (!empty($libro['id']) && !empty($libro['titolo']) && !empty($libro['prezzo']) && !empty($libro['immagine'])) : ?>
+                        <form method="POST">
+                            <input type="hidden" name="id" value="<?= htmlspecialchars($libro['id']) ?>">
+                            <input type="hidden" name="name" value="<?= htmlspecialchars($libro['titolo']) ?>">
+                            <input type="hidden" name="price" value="<?= htmlspecialchars($libro['prezzo']) ?>">
+                            <input type="hidden" name="image" value="<?= htmlspecialchars($libro['immagine']) ?>">
+                            <button type="submit" name="add_to_cart" class="add-to-cart parametriLibro">
+                                Aggiungi al carrello
+                            </button>
+                        </form>
+                    <?php else : ?>
+                        <p class='error'>Errore nel caricamento del libro</p>
+                    <?php endif; ?>
                 </div>
-            <?php endforeach; ?>
-        <?php else : ?>
-            <p>Nessun libro trovato.</p>
-        <?php endif; ?>
-    </div>
-</div>
+            </div>
+            <?php
+        }
+    }
+    ?>
+</div> <!-- chiude row -->
+</div> <!-- chiude container -->
 
+<!-- Aggiungi un link al carrello per facilitare la navigazione -->
+<div class="text-center my-4">
+    <a href="./carrello.php" class="btn btn-primary">Vai al carrello</a>
+</div>
 <?php require '../componenti/footer.php'; ?>
 </body>

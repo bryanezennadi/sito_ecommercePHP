@@ -1,0 +1,105 @@
+/* Dettagli del libro */
+.dettagli-libro {
+    max-width: 900px; /* Imposta una larghezza massima per il contenitore */
+    margin: 30px auto; /* Centra la pagina orizzontalmente e aggiunge margine superiore e inferiore */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dettagli-libro h1 {
+    font-size: 2.5rem;
+    color: #fc766d;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.dettagli-libro p {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 10px 0;
+}
+
+.dettagli-libro .img-fluid {
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+/* Pulsante aggiungi al carrello */
+.add-to-cart {
+    background-color: #00ff40;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #00cc33;
+}
+
+/* Stile per la sezione del footer */
+footer {
+    /*position: fixed;
+    bottom: 0;*/
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    color: white;
+    font-size: 1rem;
+}
+
+/* Responsive: aggiustamenti per schermi piccoli */
+@media (max-width: 768px) {
+    .dettagli-libro h1 {
+        font-size: 2rem;
+    }
+    .dettagli-libro p {
+        font-size: 1rem;
+    }
+    .dettagli-libro .img-fluid {
+        max-width: 100%;
+    }
+}
+.custom-navbar {
+    background-color: #fc766d;
+    /* Colore di sfondo più scuro */
+}
+
+.custom-navbar .navbar-brand {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #ecf0f1;
+}
+
+.custom-navbar .navbar-nav .nav-link {
+    color: black;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.custom-navbar .navbar-nav .nav-link:hover {
+    color: #00ff40;
+    /* Colore arancio per hover */
+}
+
+.custom-navbar .navbar-toggler {
+    border-color: #ecf0f1;
+}
+
+.custom-navbar .navbar-toggler-icon {
+    background-color: #ecf0f1;
+}
+
+/* Personalizzazione dello stato attivo */
+.custom-navbar .navbar-nav .nav-link.active {
+    color: #00ff40;
+    font-weight: 600;
+}

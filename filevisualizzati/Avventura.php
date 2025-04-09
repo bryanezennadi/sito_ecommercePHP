@@ -86,11 +86,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
                         // Verifica se è uno dei libri speciali per applicare la classe rimpicciolita
                         if ($i == 1 || $i == 3 || $i == 4) {
                             ?>
-                            <img src="<?= htmlspecialchars($libro['immagine']) ?>" alt="<?= htmlspecialchars($libro['titolo']) ?>" class="<?= $classeSpeciale ?>"/>
+                            <a href="dettagli.php?id=<?= urlencode($libro['id']) ?>">
+                                <img src="<?= htmlspecialchars($libro['immagine']) ?>" alt="<?= htmlspecialchars($libro['titolo']) ?>" class="<?= $classeSpeciale ?>"/>
+                            </a>
                             <?php
                         } else {
                             ?>
-                            <img src="<?= htmlspecialchars($libro['immagine']) ?>" alt="<?= htmlspecialchars($libro['titolo']) ?>" class="<?= $classeNormale ?>"/>
+                            <a href="dettagli.php?id=<?= urlencode($libro['id']) ?>">
+                                <img src="<?= htmlspecialchars($libro['immagine']) ?>" alt="<?= htmlspecialchars($libro['titolo']) ?>" class="<?= $classeNormale ?>"/>
+                            </a>
                             <?php
                         }
                         ?>
@@ -123,6 +127,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
         ?>
     </div> <!-- chiude row -->
 </div> <!-- chiude container -->
-
+<!-- Aggiungi un link al carrello per facilitare la navigazione -->
+<div class="text-center my-4">
+    <a href="./carrello.php" class="btn btn-primary">Vai al carrello</a>
+</div>
 <?php require '../componenti/footer.php' ?>
 </body>

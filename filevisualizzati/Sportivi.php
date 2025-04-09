@@ -83,28 +83,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
                         // Verifica se è uno dei libri speciali per applicare la classe rimpicciolita
                         if ($i == 1 || $i == 3 || $i == 4) {
                             ?>
-                            <img src="<?= $libro['immagine'] ?>" alt="<?= $libro['titolo'] ?>" class="<?= $classeSpeciale ?>"/>
+                            <a href="dettagli.php?id=<?= urlencode($libro['id']) ?>">
+                                <img src="<?= htmlspecialchars($libro['immagine']) ?>" alt="<?= htmlspecialchars($libro['titolo']) ?>" class="<?= $classeSpeciale ?>"/>
+                            </a>
                             <?php
                         } else {
                             ?>
-                            <img src="<?= $libro['immagine'] ?>" alt="<?= $libro['titolo'] ?>" class="<?= $classeNormale ?>"/>
+                            <a href="dettagli.php?id=<?= urlencode($libro['id']) ?>">
+                                <img src="<?= htmlspecialchars($libro['immagine']) ?>" alt="<?= htmlspecialchars($libro['titolo']) ?>" class="<?= $classeNormale ?>"/>
+                            </a>
                             <?php
                         }
                         ?>
                         <br>
-                        <h3 class="parametriLibro"><?= $libro['titolo'] ?></h3>
+                        <h3 class="parametriLibro"><?= htmlspecialchars($libro['titolo']) ?></h3>
                         <br>
-                        <p class="parametriLibro"><strong>Autore:</strong> <?= $libro['autore'] ?></p>
+                        <p class="parametriLibro"><strong>Autore:</strong> <?= htmlspecialchars($libro['autore']) ?></p>
                         <br>
-                        <p class="parametriLibro"><strong>Prezzo:</strong> <?= $libro['prezzo'] ?>€</p>
+                        <p class="parametriLibro"><strong>Prezzo:</strong> <?= htmlspecialchars($libro['prezzo']) ?>€</p>
                         <br>
+                        <!-- Form per aggiungere al carrello -->
                         <?php if (!empty($libro['id']) && !empty($libro['titolo']) && !empty($libro['prezzo']) && !empty($libro['immagine'])) : ?>
                             <form method="POST">
                                 <input type="hidden" name="id" value="<?= htmlspecialchars($libro['id']) ?>">
                                 <input type="hidden" name="name" value="<?= htmlspecialchars($libro['titolo']) ?>">
                                 <input type="hidden" name="price" value="<?= htmlspecialchars($libro['prezzo']) ?>">
                                 <input type="hidden" name="image" value="<?= htmlspecialchars($libro['immagine']) ?>">
-                                <input type="hidden" name="versione" value="Standard"> <!-- Aggiunto campo versione -->
                                 <button type="submit" name="add_to_cart" class="add-to-cart parametriLibro">
                                     Aggiungi al carrello
                                 </button>
@@ -123,7 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
 
 <!-- Aggiungi un link al carrello per facilitare la navigazione -->
 <div class="text-center my-4">
-    <a href="/cartella-del-tuo-carrello/cart.php" class="btn btn-primary">Vai al carrello</a>
+    <a href="./carrello.php" class="btn btn-primary">Vai al carrello</a>
 </div>
 
 <?php require '../componenti/footer.php'?>
