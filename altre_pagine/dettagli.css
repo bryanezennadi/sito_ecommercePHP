@@ -55,19 +55,6 @@ footer {
     color: white;
     font-size: 1rem;
 }
-
-/* Responsive: aggiustamenti per schermi piccoli */
-@media (max-width: 768px) {
-    .dettagli-libro h1 {
-        font-size: 2rem;
-    }
-    .dettagli-libro p {
-        font-size: 1rem;
-    }
-    .dettagli-libro .img-fluid {
-        max-width: 100%;
-    }
-}
 .custom-navbar {
     background-color: #fc766d;
     /* Colore di sfondo più scuro */
