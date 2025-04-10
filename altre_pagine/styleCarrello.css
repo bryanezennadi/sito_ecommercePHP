@@ -214,25 +214,6 @@
     color: #777;
     font-style: italic;
 }
-
-@media (max-width: 768px) {
-    .cart-item {
-        flex-direction: column;
-    }
-
-    .cart-item-image {
-        margin-bottom: 15px;
-    }
-
-    .cart-actions {
-        flex-direction: column;
-    }
-
-    .btn {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-}
 footer {
     position: fixed;
     bottom: 0;
