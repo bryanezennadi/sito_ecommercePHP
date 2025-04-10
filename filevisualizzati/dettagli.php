@@ -20,14 +20,11 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     // Gestione del carrello
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
         $name = $_POST['name'];
-        // Sanificare tutti gli input
-        $postId = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
-       // $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
-        $price = filter_input(INPUT_POST, 'price', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-        $image = filter_input(INPUT_POST, 'image', FILTER_SANITIZE_URL);
-        $versione = filter_input(INPUT_POST, 'versione', FILTER_SANITIZE_SPECIAL_CHARS) ?: 'Fisica';  // Default fisica se non selezionato
-
-        if ($postId && $name && $price && $image) {
+        $postId=$_POST['id'];
+        $price=$_POST['price'];
+        $image=$_POST['image'];
+        $versione=$_POST['versione'] ?? 'Fisica';
+     if ($postId && $name && $price && $image) {
             // Verifica se il libro con la versione è già nel carrello
             $found = false;
             foreach ($_SESSION['cart'] as &$item) {
